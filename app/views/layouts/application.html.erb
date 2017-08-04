@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slice</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+<span class="header-title">Slice</span><br/>
+<span class="header-subtitle">Where you can order pizza</span>
+</div>
+
+<div class="header-menu">
+<ul class="header-list">
+  <li class="header-list-item"><%= link_to 'Order Now', spree_path  %></li>
+  <li class="header-list-item"><%= link_to 'Menu', menu_index_path %></li>
+  <li class="header-list-item"><%= link_to 'Coupons', coupon_index_path %></li>
+  <li class="header-list-item"><%= link_to 'Locations', locations_path %></li>
+  <li class="header-list-item"><%= link_to 'Tracker', tracker_index_path %></li>
+</ul>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

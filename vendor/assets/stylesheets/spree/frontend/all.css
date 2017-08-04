@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require spree/frontend
+
+ *= require_self
+ *= require_tree .
+*/
+
+.header {
+  width: 80%;
+  margin-left: 10%;
+  height: 13vh;
+  position: relative;
+  top: 7%;
+  background: #6C7A89;
+  color: #F2F1EF;
+}
+
+.header-title {
+  font-size: 2em;
+  padding: 10px;
+}
+
+.header-subtitle {
+  padding: 10px;
+}
+
+.header-menu {
+  width: 80%;
+  margin-left: 10%;
+  height: 5vh;
+  list-style-type: none;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-list {
+  list-style-type: none;
+  line-height: 0.5;
+}
+
+.header-list-item {
+  display: inline-block;
+  padding-left: 10%;
+}
+
+.hero-content {
+  width: 60%;
+  margin-left: 10%;
+  height: 80vh;
+  background: #EEEEEE;
+  float: left;
+}
+
+.hero-sidebar {
+  width: 20%;
+  margin-right: 10%;
+  height: 80vh;
+  background: #DADFE1;
+  float: right;
+}
+
+.section-content {
+  width: 80%;
+  margin-left: 10%;
+  height: 80vh;
+  background: #EEEEEE;
+  float: left;
+}
+
+.spree-searchbar {
+  position: relative;
+  right: 100px;
+}
