@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require spree
+//= require spree/frontend/cart
 
 
 var map;

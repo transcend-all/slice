@@ -21,7 +21,8 @@
 
     <div class="pizza-build" style="color: red;">
     <% products.each do |product| %>
-      <% if product.id == 23 %>
+    <!-- 6 is the product id of Pizza -->
+      <% if product.id == 6 %>
       <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
       <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
         <div class="panel panel-default">
