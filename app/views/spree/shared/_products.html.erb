@@ -23,7 +23,7 @@
 
     <!-- Build your own pizza, with the option of adding build your own pasta. 6 is the product id of Pizza -->
       <% products.each do |product| %>
-        <% if product.id < 6 %>
+        <% if product.id == 6 %>
         <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
         <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
           <div class="panel panel-default">
@@ -47,13 +47,13 @@
       <% end %>
 
     </div>
-    <p>
+    <br />
     <hr />
-    </p>
+    
     <div>
 
     <% products.each do |product| %>
-    <% if product.id > 6 %>
+    <% if product.id == 1 %>
     <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
     <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
       <div class="panel panel-default">

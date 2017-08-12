@@ -52,3 +52,5 @@ gem 'spree_gateway', '~> 3.3'
 gem 'spree_product_assembly', github: 'spree-contrib/spree-product-assembly', branch: '3-1-stable'
 
 gem 'spree_wombat', github: 'spree/spree_wombat', branch: 'master'
+
+gem 'thin'
