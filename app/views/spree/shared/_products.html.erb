@@ -19,61 +19,48 @@
 <% if products.any? %>
   <div id="products" class="row" data-hook>
 
-    <div class="pizza-build" style="color: red;">
+
 
     <!-- Build your own pizza, with the option of adding build your own pasta. 6 is the product id of Pizza -->
+
+
+
       <% products.each do |product| %>
-        <% if product.id == 6 %>
+        <% if product.id == 7 %>
         <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
-          <div class="panel panel-default">
-            <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-              <div class="panel-body text-center product-body">
-                <%= link_to url, itemprop: "url" do %>
-                  <%= small_image(product, itemprop: "image") %><br/>
-                  <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-                <% end %>
-                <br/>
-              </div>
-              <div class="panel-footer text-center">
-                <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                  <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-                </span>
-              </div>
-            <% end %>
+        <%= link_to url do %>
+          <div class="pizza-build">
+            <div class="pizza-build-text">
+              <h1>Build Your Own Pizza!</hi>
+            </div>
           </div>
-        </div>
         <% end %>
       <% end %>
 
     </div>
+    <% end %>
     <br />
     <hr />
-    
+
+    <div class="order-sidebar">
+      <%= render :partial => 'spree/shared/sidebar' %>
+    </div>
+
     <div>
 
-    <% products.each do |product| %>
-    <% if product.id == 1 %>
-    <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
-      <div class="panel panel-default">
-        <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : cache_key_for_product(product)) do %>
-          <div class="panel-body text-center product-body">
-            <%= link_to url, itemprop: "url" do %>
-              <%= small_image(product, itemprop: "image") %><br/>
-              <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
-            <% end %>
-            <br/>
-          </div>
-          <div class="panel-footer text-center">
-            <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-              <span class="price selling lead" itemprop="price"><%= display_price(product) %></span>
-            </span>
+      <% products.each do |product| %>
+        <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+        <%= link_to url do %>
+          <div class="product-page-item">
+            <div class="product-picture">
+              <%= small_image(product, itemprop: "image") %>
+            </div>
+            <div class="product-title">
+                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+            </div>
           </div>
         <% end %>
-      </div>
-    </div>
-  <% end %>
+
 
     <% reset_cycle("classes") %>
     <% end %>
@@ -83,6 +70,8 @@
   </div>
 <% end %>
 
-<% if products.respond_to?(:total_pages) %>
-  <%= paginate products, theme: 'twitter-bootstrap-3' %>
-<% end %>
+<div class="order-paginator">
+  <% if products.respond_to?(:total_pages) %>
+    <%= paginate products, theme: 'twitter-bootstrap-3' %>
+  <% end %>
+</div>

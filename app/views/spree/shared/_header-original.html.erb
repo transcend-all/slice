@@ -1,0 +1,19 @@
+<div class="header">
+  <header id="header" data-hook>
+    <div class="container">
+      <div class="row">
+        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
+          <div class="header-title">Slice</div>
+          <div class="header-subtitle">Where You Can Order Pizza</div>
+
+        </figure>
+
+        <%= render :partial => 'spree/shared/nav_bar' %>
+        
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<% @body_id = 'cart' %>
+<div data-hook="cart_container" class="flub">
+<% if @order.line_items.empty? %>
+  <div data-hook="empty_cart">
+    <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
+    <p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+  </div>
+<% else %>
+  <div data-hook="outside_cart_form">
+    <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+      <div data-hook="inside_cart_form">
+
+        <div data-hook="cart_items" class="table-responsive">
+          <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
+          <table class="table" id="cart-detail" data-hook>
+
+            <tbody id="line_items" data-hook>
+              <%= render partial: 'spree/orders/sidebar_line_item', collection: order_form.object.line_items, as: :line_item, locals: { order_form: order_form } %>
+            </tbody>
+            <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
+              <tr class="cart-subtotal">
+                <td colspan="4" align='right'><h5><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></h5></td>
+                <td colspan><h5><%= order_form.object.display_item_total %></h5></td>
+                <td></td>
+              </tr>
+              <%= render "spree/orders/adjustments" %>
+            <% end %>
+            <tr class="warning cart-total">
+              <td align='left'><%= Spree.t(:total) %>: </td>
+              <td><%= order_form.object.display_total %></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
