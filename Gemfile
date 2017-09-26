@@ -55,3 +55,4 @@ gem 'spree_product_assembly', github: 'spree-contrib/spree-product-assembly', br
 gem 'spree_wombat', github: 'spree/spree_wombat', branch: 'master'
 
 gem 'thin'
+gem 'rails_12factor'
