@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: slice_production
-  username: slice
+  username: postgres
   password: <%= ENV['SLICE_DATABASE_PASSWORD'] %>
