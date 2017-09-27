@@ -3905,6 +3905,8 @@ h3.p2w {
  margin-top:3px;
 }
 
+/*Begin Evan's code*/
+
 .rinkydink {
   background-color: pink;
   color: lime;
@@ -3968,4 +3970,14 @@ h3.p2w {
 .order-paginator {
   text-align: center;
   clear: both;
+}
+
+.dom-navbar {
+  text-align: center;
+}
+
+.dom-navbar-item{
+  display:  inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
 }

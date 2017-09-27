@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from ginospizza.ca/locations.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2017 15:50:13 GMT -->
+<head>
+	<title>Locations | Gino's Pizza</title>
+	<!-- set the encoding of your site -->
+<meta charset="UTF-8">
+<!-- set the viewport width and initial-scale on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no"/>
+<!-- include the site stylesheet -->
+<link media="all" rel="stylesheet" href="css/all.css">
+<link media="all" rel="stylesheet" href="css/fancybox.css" />
+<link href='../fonts.googleapis.com/cssfc90.css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<link href='../fonts.googleapis.com/css2f80.css?family=Open+Sans:400,300,300italic,600,700,800' rel='stylesheet' type='text/css'>
+<link href='../fonts.googleapis.com/css2b2a.css?family=Cutive' rel='stylesheet' type='text/css'>
+<!-- include jQuery library -->
+<script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery.main.js"></script>
+<script type="text/javascript" src="../ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MSK95GK');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- include HTML5 IE enabling script and stylesheet for IE -->
+<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
+<!--[if IE 8]><link media="all" rel="stylesheet" href="css/ie.css"><![endif]-->
+	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDbwoOQnMNzPFrYK1N5rlu4CiWyT5QxTY&amp;sensor=false">
+    </script>
+	<style>
+		#map-canvas {
+			height:406px;
+			width:670px;
+		}
+
+		table.adp-directions {
+			width: 100% !important;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var infowindow;
+		var map;
+		var geocoder;
+		var markers = [];
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+
+
+      function initialize() {
+      	geocoder = new google.maps.Geocoder();
+      	directionsDisplay = new google.maps.DirectionsRenderer();
+      	var mapOptions = {
+        	center:
+        				new google.maps.LatLng(43.658, -79.38),
+    	    panControl: false,
+        	zoomControlOptions: {
+									style: google.maps.ZoomControlStyle.SMALL
+								},
+
+          	zoom: 	8        };
+
+        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById("directions-block"));
+
+        //Setup Custom Marker
+        var image = {
+        	url: 'images/map-marker.png',
+        	size: new google.maps.Size(51,48),
+        	origin: new google.maps.Point(0,0),
+        	anchor: new google.maps.Point(24,46)
+        };
+
+        //Default all markers on first load
+        var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1515 Rebecca St, Oakville</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.41209502, -79.70529632),map: map,icon: image,content: popup,id: "2",title: "Store 2"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1289 Marlborough Court, Oakville</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.4694247, -79.6935844),map: map,icon: image,content: popup,id: "3",title: "Store 3"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>370 Highland Rd W, Kitchener</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.43870547, -80.51184388),map: map,icon: image,content: popup,id: "4",title: "Store 4"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>3650 Dundas St. Unit F3, Burlington</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.3910313, -79.82485472),map: map,icon: image,content: popup,id: "5",title: "Store 5"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>188 Ontario St, Stratford</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.37138714, -80.97856322),map: map,icon: image,content: popup,id: "6",title: "Store 6"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1120 Wellington Rd S, London</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(42.930535,  -81.220158),map: map,icon: image,content: popup,id: "7",title: "Store 7"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2025 Guelph Line, Burlington</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.36495675, -79.82237216),map: map,icon: image,content: popup,id: "8",title: "Store 8"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>5111 New Street, Burlington</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.37161161, -79.7488005),map: map,icon: image,content: popup,id: "9",title: "Store 9"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>473 Guelph Line, Burlington</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.33922314, -79.78640193),map: map,icon: image,content: popup,id: "10",title: "Store 10"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>7 King St E, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.25662638, -79.86882802),map: map,icon: image,content: popup,id: "11",title: "Store 11"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>640 Mohawk Rd W, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.23324918, -79.91129803),map: map,icon: image,content: popup,id: "12",title: "Store 12"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>65 B Mall Rd, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.22121868, -79.86063408),map: map,icon: image,content: popup,id: "13",title: "Store 13"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1309 Main St W, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.25746581, -79.91833926),map: map,icon: image,content: popup,id: "14",title: "Store 14"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>94 Bridgeport St, Waterloo</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.47041355, -80.51512623),map: map,icon: image,content: popup,id: "16",title: "Store 16"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>431 Main St, Milton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.51778783, -79.8781867),map: map,icon: image,content: popup,id: "17",title: "Store 17"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2064 Hamilton St, Waterdown</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.33036591, -79.89465685),map: map,icon: image,content: popup,id: "18",title: "Store 18"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>34 Wilson St, Ancaster</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.21758016, -79.98760919),map: map,icon: image,content: popup,id: "19",title: "Store 19"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>412 Holland Street W, Bradford</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(44.11023295, -79.58263053),map: map,icon: image,content: popup,id: "20",title: "Store 20"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>800 Niagara Street, Welland</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.01762162, -79.24996583),map: map,icon: image,content: popup,id: "21",title: "Store 21"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1146 Barton St E, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.25081816, -79.81342911),map: map,icon: image,content: popup,id: "22",title: "Store 22"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>174 #8 Highway, Stoney Creek</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.22306224, -79.7426882),map: map,icon: image,content: popup,id: "23",title: "Store 23"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>697 Queenston Rd, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.22964325, -79.77195709),map: map,icon: image,content: popup,id: "24",title: "Store 24"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>249 St Catherine St W., Smithville</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.0956576, -79.549422),map: map,icon: image,content: popup,id: "26",title: "Store 26"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1131 Nottinghill Gate, Oakville</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.43989383, -79.71889582),map: map,icon: image,content: popup,id: "27",title: "Store 27"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>24 Main St E, Grimsby</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.19256118, -79.55995331),map: map,icon: image,content: popup,id: "30",title: "Store 30"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1405 Ottawa St N, Kitchener</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.45559017, -80.43051953),map: map,icon: image,content: popup,id: "31",title: "Store 31"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>119 Silvercreek Pkwy N, Guelph</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.54006727, -80.28044701),map: map,icon: image,content: popup,id: "32",title: "Store 32"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>601 Doon Village Rd, Kitchener</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.39818088, -80.4478151),map: map,icon: image,content: popup,id: "33",title: "Store 33"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2200 Rymal Road, Hamilton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.17330963, -79.78078492),map: map,icon: image,content: popup,id: "34",title: "Store 34"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>200 Broadway, Tillsonburg</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(42.86156693, -80.72852139),map: map,icon: image,content: popup,id: "35",title: "Store 35"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1631 Oxford St E, London</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.01209198, -81.19559049),map: map,icon: image,content: popup,id: "37",title: "Store 37"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>301 Oxford St W, London</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(42.98874397, -81.2760455),map: map,icon: image,content: popup,id: "38",title: "Store 38"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>180 Holiday Inn Dr, Cambridge</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.41561064, -80.32395131),map: map,icon: image,content: popup,id: "39",title: "Store 39"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>370 Stone Rd, Guelph</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.51737308, -80.23699256),map: map,icon: image,content: popup,id: "40",title: "Store 40"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>6303 Lundy\'s Lane, Niagara Falls</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.08947109, -79.09954742),map: map,icon: image,content: popup,id: "41",title: "Store 41"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>63 Brant Ave, Brantford</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.14074, -80.27076),map: map,icon: image,content: popup,id: "42",title: "Store 42"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>400 Balmoral St, Thunder Bay</span><br><span class="tell">(807) 343-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(48.38969826, -89.25821199),map: map,icon: image,content: popup,id: "49",title: "Store 49"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>630 Peter Robertson Blvd, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.74039, -79.75985),map: map,icon: image,content: popup,id: "52",title: "Store 52"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>825 Coxwell Ave, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.68976222, -79.32592014),map: map,icon: image,content: popup,id: "56",title: "Store 56"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1158 Bloor St. W, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.65969815, -79.43672796),map: map,icon: image,content: popup,id: "57",title: "Store 57"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2387 Yonge St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.70978923, -79.39885056),map: map,icon: image,content: popup,id: "58",title: "Store 58"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>399 Bathurst St., Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.65361, -79.40648),map: map,icon: image,content: popup,id: "60",title: "Store 60"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1062 Kingston Rd, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.68092, -79.28347),map: map,icon: image,content: popup,id: "61",title: "Store 61"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>8770 The Gore Road- Unit 5, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.76762774, -79.65717125),map: map,icon: image,content: popup,id: "63",title: "Store 63"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>787 Steeles Ave W, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.79264, -79.44477),map: map,icon: image,content: popup,id: "65",title: "Store 65"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>9625 Yonge St, Richmond Hill</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.86201432, -79.43267174),map: map,icon: image,content: popup,id: "66",title: "Store 66"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2200 Eglinton Ave W, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.56049628, -79.70475607),map: map,icon: image,content: popup,id: "67",title: "Store 67"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>3282 Lakeshore Blvd, Etobicoke</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.59678561, -79.52347319),map: map,icon: image,content: popup,id: "69",title: "Store 69"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>10671 Chinguacousy Dr #9, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.69845266, -79.82308463),map: map,icon: image,content: popup,id: "70",title: "Store 70"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1491 Innisfil Beach Rd., #3, Innisfil</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(44.30837599, -79.57654831),map: map,icon: image,content: popup,id: "76",title: "Store 76"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>617 Victoria St W, Whitby</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.85984, -78.94528),map: map,icon: image,content: popup,id: "78",title: "Store 78"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>201 Georgian Dr, Barrie</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(44.41608943, -79.66191065),map: map,icon: image,content: popup,id: "79",title: "Store 79"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1785 Queen St E, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.72592423, -79.71505956),map: map,icon: image,content: popup,id: "82",title: "Store 82"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>180 Cumberland St N, Thunder Bay</span><br><span class="tell">(807) 344-8900</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(48.4408316, -89.2130401),map: map,icon: image,content: popup,id: "84",title: "Store 84"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>253 King Street N, Waterloo</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.47617157, -80.5249826),map: map,icon: image,content: popup,id: "85",title: "Store 85"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>4700 Keele St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.77423221, -79.49842153),map: map,icon: image,content: popup,id: "86",title: "Store 86"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2524 Finch Ave W, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.74846837, -79.55946291),map: map,icon: image,content: popup,id: "87",title: "Store 87"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>3123 Sheppard Ave, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.7767077, -79.31672399),map: map,icon: image,content: popup,id: "93",title: "Store 93"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>200 Elizabeth St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.65911445, -79.38820663),map: map,icon: image,content: popup,id: "95",title: "Store 95"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>5439 Yonge St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.77678, -79.4146),map: map,icon: image,content: popup,id: "97",title: "Store 97"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>443 Parliament St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.67027471, -79.37038919),map: map,icon: image,content: popup,id: "100",title: "Store 100"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2157 Royal Windsor Dr, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.5102485, -79.63087809),map: map,icon: image,content: popup,id: "102",title: "Store 102"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1151 Dundas St W - Unit 36, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.55626872, -79.64435956),map: map,icon: image,content: popup,id: "103",title: "Store 103"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>389 Main St N, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.69470685, -79.77276791),map: map,icon: image,content: popup,id: "104",title: "Store 104"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>129 Lakeshore Rd E, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.55287151, -79.58407083),map: map,icon: image,content: popup,id: "125",title: "Store 125"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>735 Twain Ave, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.63744062, -79.72818012),map: map,icon: image,content: popup,id: "107",title: "Store 107"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>160 Main St S, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.67754399, -79.74800531),map: map,icon: image,content: popup,id: "110",title: "Store 110"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>136 Queen St S, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.583, -79.71575),map: map,icon: image,content: popup,id: "115",title: "Store 115"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>3221 Derry Rd Unit 7, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.58248, -79.7781),map: map,icon: image,content: popup,id: "116",title: "Store 116"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>377 Burnhamthorpe Rd E, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.60296718, -79.62700385),map: map,icon: image,content: popup,id: "122",title: "Store 122"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>9025 Torbram Rd, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.73443046, -79.70709181),map: map,icon: image,content: popup,id: "135",title: "Store 135"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>802 College St, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.65471, -79.42153),map: map,icon: image,content: popup,id: "139",title: "Store 139"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>5451 Highway 7 Unit 112, Woodbridge</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.77692, -79.60393),map: map,icon: image,content: popup,id: "140",title: "Store 140"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>7205 Goreway Dr, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.71742, -79.6362),map: map,icon: image,content: popup,id: "145",title: "Store 145"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2501 Hampshire Gate, Oakville</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.51946, -79.68282),map: map,icon: image,content: popup,id: "159",title: "Store 159"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>2140 Kipling Ave - Unit 1, Toronto</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.71919, -79.57041),map: map,icon: image,content: popup,id: "161",title: "Store 161"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>12284 County Rd #42, Tecumseh</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(42.31366, -82.84335),map: map,icon: image,content: popup,id: "46",title: "Store 46"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>320 Eastview Rd, Guelph</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.5780508, -80.2240571),map: map,icon: image,content: popup,id: "48",title: "Store 48"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>900 Progress Ave, Scarborough</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.781990, -79.234748),map: map,icon: image,content: popup,id: "45",title: "Store 45"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>14800 Yonge Street, Aurora</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.987404, -79.465914),map: map,icon: image,content: popup,id: "44",title: "Store 44"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>17120 Leslie Street, Newmarket</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(44.0547163, -79.4298649),map: map,icon: image,content: popup,id: "123",title: "Store 123"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>45 Dusk Drive, Brampton</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.654918, -79.768749),map: map,icon: image,content: popup,id: "124",title: "Store 124"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1550 South Gateway Road Unit 2A, Mississauga</span><br><span class="tell">905-625-8200</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.6322388, -79.6166654),map: map,icon: image,content: popup,id: "127",title: "Store 127"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>125 Seabrook Drive, Kitchener</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.3874690, -80.4876450),map: map,icon: image,content: popup,id: "999",title: "Store 999"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>1550 South Gateway Rd, Mississauga</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(43.6322350, -79.6144710),map: map,icon: image,content: popup,id: "998",title: "Store 998"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);var popup = '<div style="height:100px;"><strong class="title">Ginos Pizza</strong><br><span>40 Elm Street, Sudbury</span><br><span class="tell">(866) 310-4466</span></address></div>';marker = new google.maps.Marker({ position: new google.maps.LatLng(46.4940500, -80.9927600),map: map,icon: image,content: popup,id: "997",title: "Store 997"});google.maps.event.addListener(marker, 'click', function () {
+						if (infowindow) { infowindow.close() }
+						infowindow = new google.maps.InfoWindow({ content: $(this).attr('content') });
+						infowindow.open(map,this);
+				});markers.push(marker);
+		      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      function showInfo(store_id) {
+      	for (var i=0; i<markers.length; i++) {
+      		if (markers[i].id == store_id) {
+      			map.setCenter(markers[i].getPosition());
+      			map.setZoom(15);
+      			new google.maps.event.trigger( markers[i], 'click' );
+      		}
+      	}
+      }
+
+      function calcRoute (lat, lng) {
+      	var dest = new google.maps.LatLng(lat,lng);
+      	var request = 	{
+      						origin: userLatLng,
+      						destination: dest,
+      						travelMode: google.maps.DirectionsTravelMode.DRIVING
+      					};
+		directionsService.route(request, function(response, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					directionsDisplay.setDirections(response);
+					$('#directions-block').slideDown('slow');
+				} else { alert('Please enter your address and search before requesting driving directions.'); }
+			});
+      }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSK95GK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div id="wrapper" class="column-right">
+    <div class="banner">
+            <%= image_tag 'header_pizzaslice.jpg', alt: "image description", width: "1280", height: "200" %>
+    				<!-- <img src="images/header_pizzaslice.jpg" alt="image description" width="1280" height="200" /> -->
+    			</div>
+		<div class="wrapper-holder">
+			<div id="main">
+				<h1>Location Listing</h1>
+				<div class="main-holder">
+					<div id="content">
+						<div class="content-holder">
+							<div class="heading">
+								<h2>Find your Gino's Pizza</h2>
+								<p>With over 100 locations to serve you, there's always a Gino's Pizza nearby. Use the form below to find your closest location and get directions.</p>
+							</div>
+							<form action="http://ginospizza.ca/locations.php" method="post" class="form-search-address" name="locator_form" id="locator_form">
+								<fieldset>
+									<input type="submit" value="Search">
+									<select name="radius">
+										<option value="5">Radius: 5k</option>
+										<option value="10" selected>Radius: 10k</option>
+										<option value="15">Radius: 15k</option>
+									</select>
+									<div class="box-input">
+										<input type="text" name="u_address" id="u_address" placeholder="Your address including city">
+									</div>
+								</fieldset>
+								<input type="hidden" name="u_loc"  id="u_loc">
+							</form>
+<!--
+							<div class="newLocBanner">
+								<h2><a href="#" onclick="showInfo(996);return false;">Now Open @ 129 Lakeshore Rd E, Mississauga</a></h2>
+							</div>
+-->
+							<div class="placeholder-map">
+								<!-- <img src="images/map.jpg" alt="image description" width="670" height="406"> -->
+								<div id="map-canvas"></div>
+							</div>
+							<div id="directions-block"></div>
+						</div>
+					</div>
+					<aside class="aside">
+						<div class="box">
+							<h2>Location Listing</h2>
+							<div class="holder-scroll">
+								<ul class="list-address">
+									<li><strong class="city"><a href="#" onclick="showInfo(2);return false;">Gino's Oakville</a></strong><p>1515 Rebecca St</p></li><li><strong class="city"><a href="#" onclick="showInfo(3);return false;">Gino's Oakville</a></strong><p>1289 Marlborough Court</p></li><li><strong class="city"><a href="#" onclick="showInfo(4);return false;">Gino's Kitchener</a></strong><p>370 Highland Rd W</p></li><li><strong class="city"><a href="#" onclick="showInfo(5);return false;">Gino's Burlington</a></strong><p>3650 Dundas St. Unit F3</p></li><li><strong class="city"><a href="#" onclick="showInfo(6);return false;">Gino's Stratford</a></strong><p>188 Ontario St</p></li><li><strong class="city"><a href="#" onclick="showInfo(7);return false;">Gino's London</a></strong><p>1120 Wellington Rd S</p></li><li><strong class="city"><a href="#" onclick="showInfo(8);return false;">Gino's Burlington</a></strong><p>2025 Guelph Line</p></li><li><strong class="city"><a href="#" onclick="showInfo(9);return false;">Gino's Burlington</a></strong><p>5111 New Street</p></li><li><strong class="city"><a href="#" onclick="showInfo(10);return false;">Gino's Burlington</a></strong><p>473 Guelph Line</p></li><li><strong class="city"><a href="#" onclick="showInfo(11);return false;">Gino's Hamilton</a></strong><p>7 King St E</p></li><li><strong class="city"><a href="#" onclick="showInfo(12);return false;">Gino's Hamilton</a></strong><p>640 Mohawk Rd W</p></li><li><strong class="city"><a href="#" onclick="showInfo(13);return false;">Gino's Hamilton</a></strong><p>65 B Mall Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(14);return false;">Gino's Hamilton</a></strong><p>1309 Main St W</p></li><li><strong class="city"><a href="#" onclick="showInfo(16);return false;">Gino's Waterloo</a></strong><p>94 Bridgeport St</p></li><li><strong class="city"><a href="#" onclick="showInfo(17);return false;">Gino's Milton</a></strong><p>431 Main St</p></li><li><strong class="city"><a href="#" onclick="showInfo(18);return false;">Gino's Waterdown</a></strong><p>2064 Hamilton St</p></li><li><strong class="city"><a href="#" onclick="showInfo(19);return false;">Gino's Ancaster</a></strong><p>34 Wilson St</p></li><li><strong class="city"><a href="#" onclick="showInfo(20);return false;">Gino's Bradford</a></strong><p>412 Holland Street W</p></li><li><strong class="city"><a href="#" onclick="showInfo(21);return false;">Gino's Welland</a></strong><p>800 Niagara Street</p></li><li><strong class="city"><a href="#" onclick="showInfo(22);return false;">Gino's Hamilton</a></strong><p>1146 Barton St E</p></li><li><strong class="city"><a href="#" onclick="showInfo(23);return false;">Gino's Stoney Creek</a></strong><p>174 #8 Highway</p></li><li><strong class="city"><a href="#" onclick="showInfo(24);return false;">Gino's Hamilton</a></strong><p>697 Queenston Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(26);return false;">Gino's Smithville</a></strong><p>249 St Catherine St W.</p></li><li><strong class="city"><a href="#" onclick="showInfo(27);return false;">Gino's Oakville</a></strong><p>1131 Nottinghill Gate</p></li><li><strong class="city"><a href="#" onclick="showInfo(30);return false;">Gino's Grimsby</a></strong><p>24 Main St E</p></li><li><strong class="city"><a href="#" onclick="showInfo(31);return false;">Gino's Kitchener</a></strong><p>1405 Ottawa St N</p></li><li><strong class="city"><a href="#" onclick="showInfo(32);return false;">Gino's Guelph</a></strong><p>119 Silvercreek Pkwy N</p></li><li><strong class="city"><a href="#" onclick="showInfo(33);return false;">Gino's Kitchener</a></strong><p>601 Doon Village Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(34);return false;">Gino's Hamilton</a></strong><p>2200 Rymal Road</p></li><li><strong class="city"><a href="#" onclick="showInfo(35);return false;">Gino's Tillsonburg</a></strong><p>200 Broadway</p></li><li><strong class="city"><a href="#" onclick="showInfo(37);return false;">Gino's London</a></strong><p>1631 Oxford St E</p></li><li><strong class="city"><a href="#" onclick="showInfo(38);return false;">Gino's London</a></strong><p>301 Oxford St W</p></li><li><strong class="city"><a href="#" onclick="showInfo(39);return false;">Gino's Cambridge</a></strong><p>180 Holiday Inn Dr</p></li><li><strong class="city"><a href="#" onclick="showInfo(40);return false;">Gino's Guelph</a></strong><p>370 Stone Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(41);return false;">Gino's Niagara Falls</a></strong><p>6303 Lundy's Lane</p></li><li><strong class="city"><a href="#" onclick="showInfo(42);return false;">Gino's Brantford</a></strong><p>63 Brant Ave</p></li><li><strong class="city"><a href="#" onclick="showInfo(49);return false;">Gino's Thunder Bay</a></strong><p>400 Balmoral St</p></li><li><strong class="city"><a href="#" onclick="showInfo(52);return false;">Gino's Brampton</a></strong><p>630 Peter Robertson Blvd</p></li><li><strong class="city"><a href="#" onclick="showInfo(56);return false;">Gino's Toronto</a></strong><p>825 Coxwell Ave</p></li><li><strong class="city"><a href="#" onclick="showInfo(57);return false;">Gino's Toronto</a></strong><p>1158 Bloor St. W</p></li><li><strong class="city"><a href="#" onclick="showInfo(58);return false;">Gino's Toronto</a></strong><p>2387 Yonge St</p></li><li><strong class="city"><a href="#" onclick="showInfo(60);return false;">Gino's Toronto</a></strong><p>399 Bathurst St.</p></li><li><strong class="city"><a href="#" onclick="showInfo(61);return false;">Gino's Toronto</a></strong><p>1062 Kingston Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(63);return false;">Gino's Brampton</a></strong><p>8770 The Gore Road- Unit 5</p></li><li><strong class="city"><a href="#" onclick="showInfo(65);return false;">Gino's Toronto</a></strong><p>787 Steeles Ave W</p></li><li><strong class="city"><a href="#" onclick="showInfo(66);return false;">Gino's Richmond Hill</a></strong><p>9625 Yonge St</p></li><li><strong class="city"><a href="#" onclick="showInfo(67);return false;">Gino's Mississauga</a></strong><p>2200 Eglinton Ave W</p></li><li><strong class="city"><a href="#" onclick="showInfo(69);return false;">Gino's Etobicoke</a></strong><p>3282 Lakeshore Blvd</p></li><li><strong class="city"><a href="#" onclick="showInfo(70);return false;">Gino's Brampton</a></strong><p>10671 Chinguacousy Dr #9</p></li><li><strong class="city"><a href="#" onclick="showInfo(76);return false;">Gino's Innisfil</a></strong><p>1491 Innisfil Beach Rd., #3</p></li><li><strong class="city"><a href="#" onclick="showInfo(78);return false;">Gino's Whitby</a></strong><p>617 Victoria St W</p></li><li><strong class="city"><a href="#" onclick="showInfo(79);return false;">Gino's Barrie</a></strong><p>201 Georgian Dr</p></li><li><strong class="city"><a href="#" onclick="showInfo(82);return false;">Gino's Brampton</a></strong><p>1785 Queen St E</p></li><li><strong class="city"><a href="#" onclick="showInfo(84);return false;">Gino's Thunder Bay</a></strong><p>180 Cumberland St N</p></li><li><strong class="city"><a href="#" onclick="showInfo(85);return false;">Gino's Waterloo</a></strong><p>253 King Street N</p></li><li><strong class="city"><a href="#" onclick="showInfo(86);return false;">Gino's Toronto</a></strong><p>4700 Keele St</p></li><li><strong class="city"><a href="#" onclick="showInfo(87);return false;">Gino's Toronto</a></strong><p>2524 Finch Ave W</p></li><li><strong class="city"><a href="#" onclick="showInfo(93);return false;">Gino's Toronto</a></strong><p>3123 Sheppard Ave</p></li><li><strong class="city"><a href="#" onclick="showInfo(95);return false;">Gino's Toronto</a></strong><p>200 Elizabeth St</p></li><li><strong class="city"><a href="#" onclick="showInfo(97);return false;">Gino's Toronto</a></strong><p>5439 Yonge St</p></li><li><strong class="city"><a href="#" onclick="showInfo(100);return false;">Gino's Toronto</a></strong><p>443 Parliament St</p></li><li><strong class="city"><a href="#" onclick="showInfo(102);return false;">Gino's Mississauga</a></strong><p>2157 Royal Windsor Dr</p></li><li><strong class="city"><a href="#" onclick="showInfo(103);return false;">Gino's Mississauga</a></strong><p>1151 Dundas St W - Unit 36</p></li><li><strong class="city"><a href="#" onclick="showInfo(104);return false;">Gino's Brampton</a></strong><p>389 Main St N</p></li><li><strong class="city"><a href="#" onclick="showInfo(125);return false;">Gino's Mississauga</a></strong><p>129 Lakeshore Rd E</p></li><li><strong class="city"><a href="#" onclick="showInfo(107);return false;">Gino's Mississauga</a></strong><p>735 Twain Ave</p></li><li><strong class="city"><a href="#" onclick="showInfo(110);return false;">Gino's Brampton</a></strong><p>160 Main St S</p></li><li><strong class="city"><a href="#" onclick="showInfo(115);return false;">Gino's Mississauga</a></strong><p>136 Queen St S</p></li><li><strong class="city"><a href="#" onclick="showInfo(116);return false;">Gino's Mississauga</a></strong><p>3221 Derry Rd Unit 7</p></li><li><strong class="city"><a href="#" onclick="showInfo(122);return false;">Gino's Mississauga</a></strong><p>377 Burnhamthorpe Rd E</p></li><li><strong class="city"><a href="#" onclick="showInfo(135);return false;">Gino's Brampton</a></strong><p>9025 Torbram Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(139);return false;">Gino's Toronto</a></strong><p>802 College St</p></li><li><strong class="city"><a href="#" onclick="showInfo(140);return false;">Gino's Woodbridge</a></strong><p>5451 Highway 7 Unit 112</p></li><li><strong class="city"><a href="#" onclick="showInfo(145);return false;">Gino's Mississauga</a></strong><p>7205 Goreway Dr</p></li><li><strong class="city"><a href="#" onclick="showInfo(159);return false;">Gino's Oakville</a></strong><p>2501 Hampshire Gate</p></li><li><strong class="city"><a href="#" onclick="showInfo(161);return false;">Gino's Toronto</a></strong><p>2140 Kipling Ave - Unit 1</p></li><li><strong class="city"><a href="#" onclick="showInfo(46);return false;">Gino's Tecumseh</a></strong><p>12284 County Rd #42</p></li><li><strong class="city"><a href="#" onclick="showInfo(48);return false;">Gino's Guelph</a></strong><p>320 Eastview Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(45);return false;">Gino's Scarborough</a></strong><p>900 Progress Ave</p></li><li><strong class="city"><a href="#" onclick="showInfo(44);return false;">Gino's Aurora</a></strong><p>14800 Yonge Street</p></li><li><strong class="city"><a href="#" onclick="showInfo(123);return false;">Gino's Newmarket</a></strong><p>17120 Leslie Street</p></li><li><strong class="city"><a href="#" onclick="showInfo(124);return false;">Gino's Brampton</a></strong><p>45 Dusk Drive</p></li><li><strong class="city"><a href="#" onclick="showInfo(127);return false;">Gino's Mississauga</a></strong><p>1550 South Gateway Road Unit 2A</p></li><li><strong class="city"><a href="#" onclick="showInfo(999);return false;">Gino's Kitchener</a></strong><p>125 Seabrook Drive</p></li><li><strong class="city"><a href="#" onclick="showInfo(998);return false;">Gino's Mississauga</a></strong><p>1550 South Gateway Rd</p></li><li><strong class="city"><a href="#" onclick="showInfo(997);return false;">Gino's Sudbury</a></strong><p>40 Elm Street</p></li>								</ul>
+							</div>
+						</div>
+					</aside>
+				</div>
+		</div>
+		<footer id="footer">
+	<div class="footer-holder">
+		<div class="box-list">
+			<ul class="footer-list">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="story.html">Our Story</a></li>
+				<li><a href="specials.html">Specials</a></li>
+				<li><a href="locations.html">Locations</a></li>
+				<li><a href="franchise.html">Franchise Information</a></li>
+				<li><a href="school.html">School Fundraising</a></li>
+				<!-- <li><a href="careers.php">Careers</a></li> -->
+			</ul>
+			<ul class="footer-list">
+				<li><a href="http://ginosnewsite.opalonline.ca/wp/wp-login.php">Store Portal</a></li>
+				<li><a class="lightbox" href="#popup1" >Customer Feedback</a></li>
+			</ul>
+			<div class="footer-menu">
+				<span>Menu:</span>
+				<ul class="footer-list">
+					<li><a href="menu-starters.html">Starters & Sides</a></li>
+					<li><a href="menu-pizza.html">Specialty Pizzas</a></li>
+					<li><a href="build-your-own.html">Create Your Own</a></li>
+				</ul>
+			</div>
+		</div>
+		<strong class="logo-small"><a href="index.html">Ginos Pizza</a></strong>
+		<p>&copy; 2015 <a href="index.html">Gino’s Pizza Group Inc.</a></p>
+	</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5309061-63', 'ginospizza.ca');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Code for Remarketing Tag -->
+<!--
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 955943242;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955943242/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>-->
+<script>
+	$(document).ready(function () {
+		$('.tell').click(function () {
+			window.location = 'tel:18663104466';
+		});
+	});
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','../connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1679257855663096');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="../www.facebook.com/tr574b.gif?id=1679257855663096&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->		<!-- inline lightbox structure example -->
+<div class="popup-holder">
+	<div id="popup1" class="lightbox">
+		<strong class="title-lightbox">Contact Us</strong>
+		<div class="right-box">
+			<div class="box">
+				<strong class="title">To place an order, please call</strong>
+				<span class="phone">1-866-310-4466</span>
+			</div>
+			<div class="box">
+				<strong class="title">Gino’s Pizza Head Office</strong>
+				<address>
+					<span class="first">
+						15 Brownridge Road, <br/> Unit #5<br />Halton Hills, Ontario<br />L7G 0C6
+					</span>
+					<span><b>Tel:</b> 416-235-0000</span>
+					<span><b>Toll Free:</b> 1 (866) 340-4466</span>
+					<span><b>By Fax:</b> (905) 864-1587</span>
+				</address>
+			</div>
+		</div>
+		<form action="#" class="contact-form" name="contact_form" id="contact_form" method="post">
+			<fieldset>
+				<p>We value your opinion and welcome your feedback. Send us a message using the feedback form below.</p>
+				<div class="row">
+					<div class="col">
+						<input type="text" placeholder="First Name" name="fname" class="required">
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Last Name" name="lname" class="required">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<input type="text" placeholder="Email Address" name="email" class="required email">
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Telephone Number" name="telephone">
+					</div>
+				</div>
+				<select name="location">
+					<option value="">Select a Location</option>
+					<option value='993'>Aurora  - 14800 Yonge St</option>
+<option value='995'>Newmarket  - 17120 Leslie St</option>
+<option value='2'>Oakville  - 1515 Rebecca St</option>
+<option value='3'>Oakville  - 1289 Marlborough Court</option>
+<option value='4'>Kitchener  - 370 Highland Rd W</option>
+<option value='5'>Burlington  - 3650 Dundas St. Unit F3</option>
+<option value='6'>Stratford  - 188 Ontario St</option>
+<option value='7'>London  - 1120 Wellington Rd S</option>
+<option value='8'>Burlington  - 2025 Guelph Line</option>
+<option value='9'>Burlington  - 5111 New Street</option>
+<option value='10'>Burlington  - 473 Guelph Line</option>
+<option value='11'>Hamilton  - 7 King St E</option>
+<option value='12'>Hamilton  - 640 Mohawk Rd W</option>
+<option value='13'>Hamilton  - 65 B Mall Rd</option>
+<option value='14'>Hamilton  - 1309 Main St W</option>
+<option value='16'>Waterloo  - 94 Bridgeport St</option>
+<option value='17'>Milton  - 431 Main St</option>
+<option value='18'>Waterdown  - 2064 Hamilton St</option>
+<option value='19'>Ancaster  - 34 Wilson St</option>
+<option value='20'>Bradford  - 412 Holland Street W</option>
+<option value='21'>Welland  - 800 Niagara Street</option>
+<option value='22'>Hamiltom  - 1146 Barton St E</option>
+<option value='23'>Stoney Creek  - 174 #8 Highway</option>
+<option value='24'>Hamilton  - 697 Queenston Rd</option>
+<option value='26'>Smithville  - 249 St Catherine St W.</option>
+<option value='27'>Oakville  - 1131 Nottinghill Gate</option>
+<option value='30'>Grimsby  - 24 Main St E</option>
+<option value='31'>Kitchener  - 1405 Ottawa St N</option>
+<option value='32'>Guelph  - 119 Silvercreek Pkwy N</option>
+<option value='33'>Kitchener  - 601 Doon Village Rd</option>
+<option value='34'>Hamilton  - 2200 Rymal Road</option>
+<option value='35'>Tillsonburg  - 200 Broadway</option>
+<option value='37'>London  - 1631 Oxford St E</option>
+<option value='38'>London  - 301 Oxford St W</option>
+<option value='39'>Cambridge  - 180 Holiday Inn Dr</option>
+<option value='40'>Guelph  - 370 Stone Rd</option>
+<option value='994'>Guelph  - 320 Eastview Rd</option>
+<option value='41'>Niagara Falls  - 6303 Lundy's Lane</option>
+<option value='42'>Brantford  - 63 Brant Ave</option>
+<option value='43'>St. Catharines  - 224 Glen Ridge Ave</option>
+<option value='49'>Thunder Bay  - 400 Balmoral St</option>
+<option value='52'>Brampton  - 630 Peter Robertson Blvd</option>
+<option value='53'>Toronto  - 234 Parliament St</option>
+<option value='55'>Toronto  - 884 Danforth Ave</option>
+<option value='56'>Toronto  - 825 Coxwell Ave</option>
+<option value='57'>Toronto  - 1158 Bloor St. W</option>
+<option value='58'>Toronto  - 2387 Yonge St</option>
+<option value='60'>Toronto  - 399 Bathurst St.</option>
+<option value='61'>Toronto  - 1062 Kingston Rd</option>
+<option value='63'>Brampton  - 8770 The Gore Road- Unit 5</option>
+<option value='65'>Toronto  - 787 Steeles Ave W</option>
+<option value='66'>Richmond Hill  - 9625 Yonge St</option>
+<option value='67'>Mississauga  - 2200 Eglinton Ave W</option>
+<!-- <option value='68'>Oakville  - 2387 Trafalgar Rd</option> -->
+<option value='69'>Etobicoke  - 3282 Lakeshore Blvd</option>
+<option value='70'>Brampton  - 10671 Chinguacousy Dr #9</option>
+<option value='71'>Toronto  - 1446 Yonge St</option>
+<!-- <option value='73'>Toronto  - 2526 Jane St</option> -->
+<option value='75'>Toronto  - 2900  Steeles Ave E</option>
+<option value='76'>Innisfil  - 1491 Innisfil Beach Rd., #3</option>
+<option value='78'>Whitby  - 617 Victoria St W</option>
+<!-- <option value='79'>Barrie  - 201 Georgian Dr</option> -->
+<option value='80'>Toronto  - 4928 Dundas St W</option>
+<option value='81'>Toronto  - 1682 Jane St</option>
+<option value='82'>Brampton  - 1785 Queen St E</option>
+<option value='83'>Toronto  - 681 Markham Rd</option>
+<option value='84'>Thunder Bay  - 180 Cumberland St N</option>
+<option value='85'>Waterloo  - 253 King Street N</option>
+<option value='86'>Toronto  - 4700 Keele St</option>
+<option value='87'>Toronto  - 2524 Finch Ave W</option>
+<option value='88'>Toronto  - 1661 Eglinton St</option>
+<option value='89'>Whitby  - 308 Taunton Rd E</option>
+<option value='91'>Richmond Hill  - 10255 Yonge St</option>
+<option value='92'>Toronto  - 2739 Eglinton Ave E</option>
+<option value='93'>Toronto  - 3123 Sheppard Ave</option>
+<option value='95'>Toronto  - 200 Elizabeth St</option>
+<option value='97'>Toronto  - 5439 Yonge St</option>
+<option value='98'>Toronto  - 520 Bloor St W</option>
+<option value='99'>Toronto  - 1158 Danforth Ave</option>
+<option value='100'>Toronto  - 443 Parliament St</option>
+<option value='102'>Mississauga  - 2157 Royal Windsor Dr</option>
+<option value='103'>Mississauga  - 1151 Dundas St W - Unit 36</option>
+<option value='104'>Brampton  - 389 Main St N</option>
+<option value='105'>Mississauga  - 89 Lakeshore Rd E</option>
+<option value='107'>Mississauga  - 735 Twain Ave</option>
+<option value='110'>Brampton  - 160 Main St S</option>
+<option value='115'>Mississauga  - 136 Queen St S</option>
+<option value='116'>Mississauga  - 3221 Derry Rd Unit 7</option>
+<option value='122'>Mississauga  - 377 Burnhamthorpe Rd E</option>
+<option value='135'>Brampton  - 9025 Torbram Rd</option>
+<option value='139'>Toronto  - 802 College St</option>
+<option value='140'>Woodbrige  - 5451 Highway 7 Unit 112</option>
+<option value='145'>Mississauga  - 7205 Goreway Dr</option>
+<option value='159'>Oakville  - 2501 Hampshire Gate</option>
+<option value='161'>Toronto  - 2140 Kipling Ave - Unit 1</option>
+<option value='46'>Tecumseh  - 12284 County Rd #42</option>				</select>
+				<textarea cols="30" rows="10" placeholder="Message" name="msg" class="required"></textarea>
+				<div id="web_div">
+					<label>What is 2 + 2?</label>
+					<input type="text" name="website" id="website" value="" />
+				</div>
+				<small style="display:inline-block;line-height:14px;margin-bottom:10px;">If you are not satisfied with the product that you have received, we want to make it right. Upon receiving the product, we will replace it with a similar product that meets your satisfaction.</small>
+				<input type="submit" value="Submit Message" id="contact_submit">
+				<h2 id="lblSend" style="display:none;">Sending... Please Wait</h2>
+				<h2 id="lblSucc" style="display:none;">Thank you! Your message has been sent!</h2>
+				<h2 id="lblError" style="display:none;">Error sending message. Try again later.</h2>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<script>
+	$(document).ready(function () {
+		$('#web_div').hide();
+		$('#contact_form').validate({
+			submitHandler: function() {
+				$('#contact_submit').hide();
+				$('#lblSend').show();
+				$.post('scripts/doContact.html', $('#contact_form').serialize(), function (data) {
+					$('#lblSend').hide();
+					if (data == 'OK') {
+						$('#lblSucc').show();
+					} else {
+						$('#lblError').show();
+					}
+				});
+			}
+		});
+	});
+</script><!--
+		<div style="position:absolute;top:380px;left:0;">
+			<a href="/pin2win.php" /><img src="images/side-bubble.png" /></a>
+		</div>
+-->
+	</div>
+	<script>
+		$('#locator_form').submit(function (e) {
+			e.preventDefault();
+			var address = $('#u_address').val() + " ontario canada";
+			geocoder.geocode( {'address': address}, function (results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					$('#u_loc').val(results[0].geometry.location);
+					document.locator_form.submit();
+					return true;
+				} else {
+					alert('Could not determine your location. Please try again.');
+				}
+			});
+		});
+	</script>
+</body>
+
+<!-- Mirrored from ginospizza.ca/locations.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 12 Aug 2017 15:50:47 GMT -->
+</html>

@@ -12,6 +12,8 @@
  *
  */
 
+ @import 'spree/frontend/all';
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -3839,4 +3841,15 @@ h3.p2w {
 	color: #636363;
 	display:inline-block;
 	margin-top:3px;
+}
+
+
+.dom-navbar {
+  text-align: center;
+}
+
+.dom-navbar-item{
+  display:  inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
 }

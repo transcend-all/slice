@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :school
 
-  mount Spree::Core::Engine, at: '/order'
+  mount Spree::Core::Engine, at: '/'
 
   root 'landing#index'
 

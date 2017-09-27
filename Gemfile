@@ -56,3 +56,5 @@ gem 'spree_wombat', github: 'spree/spree_wombat', branch: 'master'
 
 gem 'thin'
 gem 'rails_12factor'
+
+gem 'simple-navigation'
