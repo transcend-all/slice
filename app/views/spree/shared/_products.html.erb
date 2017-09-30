@@ -1,8 +1,8 @@
-<% content_for :head do %>
-  <% if products.respond_to?(:total_pages) %>
-    <%= rel_next_prev_link_tags products %>
-  <% end %>
-<% end %>
+<%# content_for :head do %>
+  <%# if products.respond_to?(:total_pages) %>
+    <%#= rel_next_prev_link_tags products %>
+  <%# end %>
+<%# end %>
 
 <div data-hook="products_search_results_heading">
   <% if products.empty? %>
@@ -16,62 +16,154 @@
   <% end %>
 </div>
 
-<% if products.any? %>
-  <div id="products" class="row" data-hook>
+<%# if products.any? %>
+  <!-- <div id="products" class="row" data-hook> -->
+
+  <div class="order-sidebar">
+    <%= render :partial => 'spree/shared/sidebar' %>
+  </div>
 
 
-
-    <!-- Build your own pizza, with the option of adding build your own pasta. 6 is the product id of Pizza -->
-
-
-
-      <% products.each do |product| %>
-        <% if product.id == 1 %>
-        <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-        <%= link_to url do %>
-          <div class="pizza-build">
-            <div class="pizza-build-text">
-              <h1>Build Your Own Pizza!</hi>
-            </div>
+      <%= link_to spree.product_path(38) do %>
+        <div class="pizza-build2">
+          <div class="pizza-build-text2">
+            <h1>Special Deal!</h1>
+            <h3>2 Medium 1-topping Pizzas, Breadsticks, Cinnamon Twists, and a 2-liter Coke for $19.99</h3>
           </div>
-        <% end %>
+        </div>
       <% end %>
 
-    </div>
-    <% end %>
-    <br />
-    <hr />
+  <!-- </div> -->
+<hr>
 
-    <div class="order-sidebar">
-      <%= render :partial => 'spree/shared/sidebar' %>
-    </div>
+
 
     <div>
 
-      <% products.each do |product| %>
-        <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
-        <%= link_to url do %>
+      <%= link_to popular_items_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Popular Items
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to coupon_index_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Coupons
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to spree.product_path(1) do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Build Your Own Pizza
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to pizza_index_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Specialty Pizzas
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to sandwiches_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Sandwiches
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to chicken_index_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Chicken
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to pasta_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Pasta
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to sides_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Sides
+          </div>
+        </div>
+      <% end %>
+
+
+      <%= link_to drinks_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Drinks
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to desserts_path do %>
+        <div class="product-page-item">
+          <div class="product-picture">
+          </div>
+          <div class="product-title">
+              Desserts
+          </div>
+        </div>
+      <% end %>
+      <!-- <%# products.each do |product| %>
+        <%# url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+        <%#= link_to url do %>
           <div class="product-page-item">
             <div class="product-picture">
-              <%= small_image(product, itemprop: "image") %>
+              <%#= small_image(product, itemprop: "image") %>
             </div>
             <div class="product-title">
-                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                <%#= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
             </div>
           </div>
-        <% end %>
+        <%# end %> -->
 
 
-    <% reset_cycle("classes") %>
-    <% end %>
+    <%# reset_cycle("classes") %>
+    <%# end %>
+  <!-- </div> -->
+
+
   </div>
-
-
-  </div>
-<% end %>
+<%# end %>
 
 <div class="order-paginator">
   <% if products.respond_to?(:total_pages) %>
-    <%= paginate products, theme: 'twitter-bootstrap-3' %>
+    <%#= paginate products, theme: 'twitter-bootstrap-3' %>
   <% end %>
 </div>

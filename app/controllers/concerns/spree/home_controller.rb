@@ -13,5 +13,9 @@ module Spree
                                   find_or_initialize_by(guest_token: cookies.signed[:guest_token])
       associate_user
     end
+
+    def sandwiches
+    end
+    
   end
 end

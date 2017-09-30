@@ -1,2 +1,4 @@
 class MenuController < ApplicationController
+
+
 end

@@ -3905,16 +3905,15 @@ h3.p2w {
   text-align: center;
 }
 
-.pizza-build2{
-  color: black;
+.pizza-build{
+  color: red;
   background: url('img-01.jpg');
   background-repeat: no-repeat;
   height: 300px;
-  width: 70%;
-  text-decoration: none;
+  width: 100%;
 }
 
-.pizza-build-text2{
+.pizza-build-text{
   position: relative;
   top: 20%;
   left: 5%;
@@ -3923,7 +3922,6 @@ h3.p2w {
   background: #F22613;
   border-radius: 10px;
   width: 550px;
-  color: black;
 }
 
 .product-page-item{
@@ -3969,8 +3967,4 @@ h3.p2w {
   display:  inline-block;
   padding-left: 25px;
   padding-right: 25px;
-}
-
-.flink {
-  text-align: center;
 }

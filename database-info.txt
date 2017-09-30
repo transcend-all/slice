@@ -1,0 +1,40 @@
+[[1, "Pizza"], [2, "Breadsticks"], [3, "Chicken Wings"], [4, "Cheesy Bread"], [5, "Chicken Fingers"], [6, "Garlic Bread"], [7, "Meat Lovers Pizza"], [8, "Veggie Lovers Pizza"], [9, "Philly Cheese Steak Pizza"], [10, "BBQ Chicken Pizza"], [11, "Hawaiian Pizza"], [12, "Chicken Bacon Ranch Pizza"], [13, "Supreme Pizza"], [14, "Ultimate Pepperoni Pizza"], [15, "Buffalo Chicken Pizza"], [16, "6 Cheese Pizza"], [17, "Spinach and Feta Pizza"], [18, "Buffalo Chicken Sandwich"], [19, "Philly Cheese Steak Sandwich"], [20, "Chicken Bacon Ranch Sandwich"], [21, "Italian Sandwich"], [22, "Chicken Parm Sandwich"], [23, "Chicken Alfredo Pasta"], [24, "Italian Sausage Marinara Pasta"], [25, "Chicken Carbonara Pasta"], [26, "Pasta Primavera"], [27, "Cinnamon Twists"], [28, "Chocolate Chip Cookie"], [29, "Brownie"], [30, "Coca Cola"], [31, "Coke Zero"], [32, "Diet Coke"], [33, "Sprite"], [34, "Dasani Bottled Water"], [35, "Fanta Orange"]]
+
+1Ultimate Pepperoni Pizza
+2Dasani Bottled Water
+3Pasta Primavera
+4Buffalo Chicken Pizza
+5Build Your Own Pizza
+6Cinnamon Twists
+7Supreme Pizza
+8Fanta Orange
+9Large 3-topping Pizza for $12
+10Sprite
+11Diet Coke
+12Six Cheese Pizza
+13Breadsticks
+14Hawaiian Pizza
+15 2 Medium 1-topping Pizzas, Breadsticks, Cinnamon Twists, and a 2-liter 16 Coke for $19.99
+17 Italian Sausage Marinara Pasta
+18 Chicken Carbonara Pasta
+19Chicken Bacon Ranch Sandwich
+20 Chicken Parm Sandwich
+21 Philly Cheese Steak Sandwich
+22 Italian Sandwich
+23 Chicken Alfredo Pasta
+24 Chocolate Chip Cookie
+25 Chicken Fingers
+26 Cheesy Bread
+27 Buffalo Chicken Sandwich
+28 Coke Zero
+29 Philly Cheese Steak Pizza
+30 Brownie
+31 Coca Cola
+32 BBQ Chicken Pizza
+33 Veggie Lovers Pizza
+34 Garlic Bread
+35 Chicken Bacon Ranch Pizza
+36 Meat Lovers Pizza
+37 Spinach and Feta Pizza
+38 Breadsticks and a 2-Liter Coca-cola for $5
+39 Chicken Wings
