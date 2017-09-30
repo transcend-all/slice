@@ -34,4 +34,5 @@ Spree::Core::Engine.routes.draw do
   resources :desserts
   resources :popular_items
   resources :coupon
+
 end

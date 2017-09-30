@@ -33,13 +33,19 @@
             <%= product_description(@product) %>
           </div>
 
-          <div id="cart-form" data-hook="cart_form">
-            <%= render :partial => 'cart_form' %>
-          </div>
+          <% if @product.id == 39 %>
+            <%= render :partial => 'spree/shared/cart_form_crust' %>
+          <% else %>
+            <div id="cart-form" data-hook="cart_form">
+              <%= render :partial => 'cart_form' %>
+            </div>
+          <% end %>
+
+
         </div>
 
         <div id="taxon-crumbs" class=" five " data-hook="product_taxons">
-          <%= render :partial => 'taxons' %>
+          <%#= render :partial => 'taxons' %>
         </div>
       </div>
     </div>
