@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804201034) do
+ActiveRecord::Schema.define(version: 20171002162853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -249,8 +249,9 @@ ActiveRecord::Schema.define(version: 20170804201034) do
     t.string   "name"
     t.string   "presentation"
     t.integer  "option_type_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.decimal  "surcharge",      precision: 8, scale: 2, default: 0.0
   end
 
   add_index "spree_option_values", ["name"], name: "index_spree_option_values_on_name", using: :btree
@@ -439,6 +440,7 @@ ActiveRecord::Schema.define(version: 20170804201034) do
     t.datetime "discontinue_on"
     t.boolean  "can_be_part",          default: false, null: false
     t.boolean  "individual_sale",      default: true,  null: false
+    t.boolean  "dynamic_variants",     default: false
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree

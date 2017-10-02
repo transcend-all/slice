@@ -58,3 +58,5 @@ gem 'thin'
 gem 'rails_12factor'
 
 gem 'simple-navigation'
+
+gem 'spree_dynamic_variants', github: 'hefan/spree_dynamic_variants', branch: '3-1-stable'

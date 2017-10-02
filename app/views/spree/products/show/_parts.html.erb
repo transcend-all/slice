@@ -1,5 +1,3 @@
-<%= @product.assemblies_parts.last %>
-
 <% if @product.assemblies_parts.any? %>
   <div class="columns col-md-12">
     <h6><%= Spree.t(:parts_included) %></h6>
@@ -14,6 +12,11 @@
               <%= link_to small_image(part.product, itemprop: "name"), part.product %>
             </div>
             <%= link_to truncate(part.product.name, length: 50), part.product, class: 'info', itemprop: "name", title: part.product.name %>
+
+
+
+            
+
 
             <%- if !part.in_stock? && !part_variant.variant_selection_deferred? %>
               <%- if part.is_backorderable? %>

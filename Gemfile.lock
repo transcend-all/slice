@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/hefan/spree_dynamic_variants.git
+  revision: fac226bccf5be8fe1882518d9347c53fd0f2b17c
+  branch: 3-1-stable
+  specs:
+    spree_dynamic_variants (3.1.0)
+      spree_core (~> 3.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree-product-assembly.git
   revision: abc3a5e23ebec04e0cb2d49d1c67bb80425b15b7
   branch: 3-1-stable
@@ -386,6 +394,7 @@ DEPENDENCIES
   simple-navigation
   spree (~> 3.1.0)
   spree_auth_devise (~> 3.3)
+  spree_dynamic_variants!
   spree_gateway (~> 3.3)
   spree_product_assembly!
   spree_wombat!
