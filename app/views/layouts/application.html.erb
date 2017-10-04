@@ -6,15 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <title>Slice - Where You Can Order Pizza</title>
+  <title>Gino's Pizza</title>
 </head>
 <body>
 
-<div class="dom-navbar">
-  <h3 class="dom-navbar-item"><%= link_to 'Menu', '/' %></h3>
-  <h3 class="dom-navbar-item"><%= link_to 'Coupons', '/coupon' %></h3>
-  <h3 class="dom-navbar-item"><%= link_to 'Locations', '/locations' %></h3>
-  <h3 class="dom-navbar-item"><%= link_to 'Tracker', '/tracker' %></h3>
+<div class="header-navbar">
+  <h3 class="header-navbar-item"><%= link_to 'Menu', '/' %></h3>
+  <h3 class="header-navbar-item"><%= link_to 'Coupons', '/coupon' %></h3>
+  <h3 class="header-navbar-item"><%= link_to 'Locations', '/locations' %></h3>
 </div>
 <%= yield %>
 

@@ -1,0 +1,49 @@
+<% content_for :sidebar do %>
+  <div class="sidebar-cart" data-hook="homepage_sidebar_navigation">
+    <%= render :partial => 'spree/shared/link_to_cart' %>
+    <%= render :partial => 'spree/shared/sidebar_cart' %>
+  </div>
+<% end %>
+
+<div class="section-title">
+  Sandwiches
+</div>
+<br>
+
+<div class="col-md-9">
+  <div class="col-md-3 flink">
+    <%= link_to spree.product_path(18) do %>
+      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      Buffalo Chicken Sandwich
+    <% end %>
+  </div>
+
+  <div class="col-md-3 flink">
+    <%= link_to spree.product_path(19) do %>
+      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      Philly Cheese Steak Sandwich
+    <% end %>
+  </div>
+
+  <div class="col-md-3 flink">
+    <%= link_to spree.product_path(20) do %>
+      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      Chicken Bacon Ranch Sandwich
+    <% end %>
+  </div>
+
+  <div class="col-md-3 flink">
+    <%= link_to spree.product_path(21) do %>
+      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      Italian Sandwich
+    <% end %>
+  </div>
+
+  <div class="col-md-3 flink">
+    <%= link_to spree.product_path(22) do %>
+      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      Chicken Parm Sandwich
+    <% end %>
+  </div>
+
+</div>

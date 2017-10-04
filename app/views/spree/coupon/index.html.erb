@@ -1,0 +1,8 @@
+<% content_for :sidebar do %>
+  <div class="sidebar-cart" data-hook="homepage_sidebar_navigation">
+    <%= render :partial => 'spree/shared/link_to_cart' %>
+    <%= render :partial => 'spree/shared/sidebar_cart' %>
+  </div>
+<% end %>
+
+<%= render :partial => 'spree/shared/coupons' %>

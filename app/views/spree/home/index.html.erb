@@ -1,11 +1,12 @@
 <% content_for :sidebar do %>
-  <div data-hook="homepage_sidebar_navigation">
-    <%#= render :partial => 'spree/shared/taxonomies' %>
+  <div class="sidebar-cart" data-hook="homepage_sidebar_navigation">
     <%= render :partial => 'spree/shared/link_to_cart' %>
     <%= render :partial => 'spree/shared/sidebar_cart' %>
   </div>
 <% end %>
 
+
+<!-- Main content for order page is in the products partial referenced here -->
 <div data-hook="homepage_products">
   <% cache(cache_key_for_products) do %>
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>

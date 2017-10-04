@@ -28,6 +28,10 @@ module Spree
       @product_properties = @product.product_properties.includes(:property)
       @taxon = params[:taxon_id].present? ? Spree::Taxon.find(params[:taxon_id]) : @product.taxons.first
       redirect_if_legacy_path
+      @order = current_order || Order.incomplete.
+                                  includes(line_items: [variant: [:images, :option_values, :product]]).
+                                  find_or_initialize_by(guest_token: cookies.signed[:guest_token])
+      associate_user
     end
 
     private

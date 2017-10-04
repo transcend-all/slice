@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :coupon
+  # resources :coupon
   resources :menu
   resources :locations
   resources :tracker
@@ -8,14 +8,14 @@ Rails.application.routes.draw do
   resources :franchise
   resources :story
   resources :school
-  resources :sandwiches
-  resources :pizza
-  resources :pasta
-  resources :chicken
-  resources :sides
-  resources :drinks
-  resources :desserts
-  resources :popular_items
+  # resources :sandwiches
+  # resources :pizza
+  # resources :pasta
+  # resources :chicken
+  # resources :sides
+  # resources :drinks
+  # resources :desserts
+  # resources :popular_items
 
 
   mount Spree::Core::Engine, at: '/'
