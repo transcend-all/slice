@@ -10,32 +10,29 @@
 </div>
 <br>
 
-<div class="col-md-9">
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(2) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Breadsticks
-    <% end %>
-  </div>
+<div class="section-items">
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(4) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Cheesy Bread
-    <% end %>
-  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(2) do %>
+        <div class="flinkablink"><%= image_tag('015-breadsticks.jpg', class: 'grid-image') %></div>
+        Breadsticks
+      <% end %>
+    </div>
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(6) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Garlic Bread
-    <% end %>
-  </div>
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(4) do %>
+        <div class="flinkablink"><%= image_tag('018-cheesy-bread.jpg', class: 'grid-image') %></div>
+        Cheesy Bread
+      <% end %>
+    </div>
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(26) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Pasta Primavera
-    <% end %>
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(6) do %>
+        <div class="flinkablink"><%= image_tag('033-garlic-bread.jpg', class: 'grid-image') %></div>
+        Garlic Bread
+      <% end %>
+    </div>
+
   </div>
 </div>

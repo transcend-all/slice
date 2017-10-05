@@ -1,6 +1,32 @@
-<div class="header-navbar">
-  <div class="header-navbar-item"><%= image_tag 'logo.png' %></div>
-  <h3 class="header-navbar-item"><%= link_to 'Menu', '/', style: 'text-decoration: none;' %></h3>
-  <h3 class="header-navbar-item"><%= link_to 'Coupons', '/coupon', style: 'text-decoration: none;' %></h3>
-  <h3 class="header-navbar-item"><%= link_to 'Locations', '/locations', style: 'text-decoration: none;' %></h3>
-</div>
+
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          </div>
+
+      <%= link_to '/' do %><div class="col-md-6"><%= image_tag 'logo.png', class: "header-navbar-item" %></div><% end %>
+
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center;">
+            <ul class="nav navbar-nav" style="display:inline-block;float:none;">
+              <li>
+                <h3 class="header-navbar-item"><%= link_to 'Menu', '/', style: 'text-decoration: none;' %></h3>
+              </li>
+              <li>
+                <h3 class="header-navbar-item"><%= link_to 'Coupons', '/coupon', style: 'text-decoration: none;' %></h3>
+              </li>
+              <li>
+                <h3 class="header-navbar-item"><%= link_to 'Locations', '/locations', style: 'text-decoration: none;' %></h3>
+             </li>
+            </ul>
+          </div>
+    </div>
+
+
+</nav>

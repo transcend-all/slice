@@ -98,6 +98,7 @@
   display:  inline-block;
   padding-left: 25px;
   padding-right: 25px;
+  max-width: 100%;
 }
 
 .header-navbar-text {
@@ -115,6 +116,10 @@
   width: 100px;
   overflow: hidden;
   margin: auto;
+}
+
+.grid-image {
+  max-height: 100%;
 }
 
 .border-wrap {
@@ -157,7 +162,11 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 640px) {
+.section-items {
+  width: 70%;
+}
+
+@media (max-width: 768px) {
   .sidebar-cart {
     display: none;
   }
@@ -166,5 +175,11 @@
   }
   .product-page-item {
     width: 90%;
+  }
+  .section-title{
+    width: 100%;
+  }
+  .section-items{
+    width: 100%;
   }
 }

@@ -10,18 +10,22 @@
 </div>
 <br>
 
-<div class="col-md-9">
-  <div class="col-md-3 flink">
+<div class="section-items">
+
+<div class="row">
+  <div class="col-md-3 col-sm-6 flink">
     <%= link_to spree.product_path(3) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      <div class="flinkablink"><%= image_tag('024-chicken-wings.jpg', class: 'grid-image') %></div>
       Chicken Wings
     <% end %>
   </div>
 
-  <div class="col-md-3 flink">
+  <div class="col-md-3 col-sm-6 flink">
     <%= link_to spree.product_path(5) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
+      <div class="flinkablink"><%= image_tag('022-chicken-fingers.jpg', class: 'grid-image') %></div>
       Chicken Fingers
     <% end %>
   </div>
+</div>
+
 </div>

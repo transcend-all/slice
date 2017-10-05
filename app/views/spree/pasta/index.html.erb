@@ -10,32 +10,35 @@
 </div>
 <br>
 
-<div class="col-md-9">
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(23) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Chicken Alfredo Pasta
-    <% end %>
-  </div>
+<div class="section-items">
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(24) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Italian Sausage Marinara Pasta
-    <% end %>
-  </div>
+  <div class="row">
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(23) do %>
+        <div class="flinkablink"><%= image_tag('019-chicken-alfredo-pasta.jpg', class: 'grid-image') %></div>
+        Chicken Alfredo Pasta
+      <% end %>
+    </div>
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(25) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Chicken Carbonara Pasa
-    <% end %>
-  </div>
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(24) do %>
+        <div class="flinkablink"><%= image_tag('035-marinara-pasta.jpg', class: 'grid-image') %></div>
+        Italian Sausage Marinara Pasta
+      <% end %>
+    </div>
 
-  <div class="col-md-3 flink">
-    <%= link_to spree.product_path(26) do %>
-      <div class="flinkablink"><%= image_tag('img-02.jpg') %></div>
-      Pasta Primavera
-    <% end %>
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(25) do %>
+        <div class="flinkablink"><%= image_tag('021-chicken-carbonara-pasta.jpg', class: 'grid-image') %></div>
+        Chicken Carbonara Pasa
+      <% end %>
+    </div>
+
+    <div class="col-md-3 col-sm-6 flink">
+      <%= link_to spree.product_path(26) do %>
+        <div class="flinkablink"><%= image_tag('036-pasta-primavera.jpg', class: 'grid-image') %></div>
+        Pasta Primavera
+      <% end %>
+    </div>
   </div>
 </div>

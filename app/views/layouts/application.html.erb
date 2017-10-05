@@ -10,11 +10,8 @@
 </head>
 <body>
 
-<div class="header-navbar">
-  <h3 class="header-navbar-item"><%= link_to 'Menu', '/' %></h3>
-  <h3 class="header-navbar-item"><%= link_to 'Coupons', '/coupon' %></h3>
-  <h3 class="header-navbar-item"><%= link_to 'Locations', '/locations' %></h3>
-</div>
+<%= render 'spree/shared/header' %>
+
 <%= yield %>
 
 </body>
